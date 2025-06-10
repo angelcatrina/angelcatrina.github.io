@@ -14,12 +14,12 @@ timezone:
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Chirpy # the main title
+title: Angel Catrina S. # the main title
 
-tagline: A text-focused Jekyll theme # it will display as the subtitle
+tagline: H071241094 Sistem Informasi Universitas Hasanuddin # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+  blog, angel, github
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -98,7 +98,7 @@ theme_mode: # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: https://instagram.fupg2-1.fna.fbcdn.net/v/t51.2885-19/504252838_18081808774747827_1501325150438856493_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=instagram.fupg2-1.fna.fbcdn.net&_nc_cat=103&_nc_oc=Q6cZ2QGQgYug_6yFb_28GtcDK9fuYXPcMjvEaZ3aFEdA_TtWyJPfil9QCs2fZY0KyyJwQVo&_nc_ohc=pQOUh-TEbMwQ7kNvwFGT--X&_nc_gid=Ea6_Gs55qgzNNjHdqeHCPQ&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AfPIwseYimDBLGMJmGlD4McgnMHAjRFHCMKVUwNir-YVpQ&oe=684DDF5C&_nc_sid=7d3ac5
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.

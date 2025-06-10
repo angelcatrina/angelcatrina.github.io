@@ -1,0 +1,143 @@
+---
+title: ♛ N-Queens Problem
+date: 2025-06-10 00:00:00 +0800
+last_modified_at: 2025-06-10 14:45:00 +0700
+categories: [Kelompok 4]
+tags: [DAA]
+---
+
+# 📌 Deskripsi
+N-Queens Problem adalah masalah klasik dalam ilmu komputer & matematika kombinatorik.
+Tujuannya: menempatkan N buah ratu catur di papan NxN sehingga tidak ada dua ratu yang saling menyerang.
+
+*Ratu dapat bergerak secara:*
+1. horizontal (baris),
+2. vertikal (kolom),
+3. diagonal.
+Oleh karena itu, tidak boleh ada dua ratu di baris, kolom, atau diagonal yang sama.
+
+*Contoh paling terkenal:*
+ - 8-Queens Problem → menempatkan 8 ratu di papan 8x8.
+
+---
+
+# Tujuan Masalah N-Queens
+1. Menemukan semua konfigurasi penempatan ratu yang valid.
+2. Mengembangkan dan menguji berbagai algoritma pencarian dan optimasi:
+    - Backtracking
+    - DFS
+    - Heuristic Search
+    - Algoritma Genetika
+3. Melatih logika pemrograman dalam konteks Constraint Satisfaction Problem (CSP).
+
+---
+
+# Pentingnya N-Queens Problem
+*1️Studi Kasus dalam AI & Algoritma*
+1. Digunakan untuk mengajarkan teknik pencarian:
+    - Backtracking
+    - Branch and Bound
+    - Heuristic & Metaheuristic
+2. Landasan penting dalam studi AI & Operations Research.
+
+*Model CSP*
+- Contoh ideal dari Constraint Satisfaction Problem (CSP):
+- Variabel: baris/kolom
+- Nilai: posisi ratu
+- Kendala: tidak saling menyerang.
+
+*Aplikasi Dunia Nyata*
+1. Penjadwalan tugas → menghindari konflik.
+2. Penempatan modul elektronik.
+3. Pengalokasian sumber daya eksklusif.
+
+*Kompleksitas & Skalabilitas*
+1. Kompleksitas meningkat eksponensial dengan N.
+2. Cocok untuk menguji efisiensi algoritma skala besar.
+
+---
+
+# Mengapa N-Queens = Masalah Backtracking
+
+*Teknik Backtracking:*
+1. Membangun solusi langkah demi langkah.
+2. Mundur (backtrack) jika menemui jalan buntu.
+
+*Relevansi dalam DAA:*
+1. Studi Kasus Teknik Backtracking
+Ilustrasi konsep backtracking secara sistematis.
+2. Analisis Kompleksitas
+Bandingkan brute-force vs backtracking → lebih efisien.
+3. Pengenalan CSP
+Memperkenalkan forward checking & backjumping.
+
+---
+
+# Langkah-langkah Algoritma Backtracking untuk N-Queens
+1. Pilih keputusan (Decision Choice):
+   Pilih kolom untuk menempatkan ratu di baris berikutnya.
+2. Periksa batasan (Constraint Check):
+   Periksa apakah posisi aman (tidak diserang ratu lain).
+3. Rekursi (Recursive Exploration):
+   Jika valid, lanjutkan ke baris berikutnya.
+4. Backtrack:
+   Jika dead end → undo keputusan → coba opsi lain.
+5. Base Case:
+   Jika semua ratu berhasil ditempatkan → catat solusi.
+
+---
+
+# Analogi Dunia Nyata
+*Penempatan Karyawan di Ruang Kerja*
+N karyawan → N ruang kerja.
+
+Aturan:
+1. Ruang berdekatan tidak boleh diisi oleh karyawan yang sama.
+2. Karyawan tidak boleh diatur pada garis lurus (seperti diagonal di N-Queens).
+
+*Langkah-langkah:*
+1. Tempatkan karyawan pertama.
+2. Tempatkan karyawan berikutnya di ruang yang valid.
+3. Jika tidak ada ruang valid → backtrack & coba opsi lain.
+4. Lanjutkan hingga semua karyawan ditempatkan dengan aturan terpenuhi.
+
+*Kesimpulan:*
+Sama seperti N-Queens → penempatan optimal & constraint satisfaction.
+
+---
+
+# Implementasi (Contoh C++)
+
+// Pseudocode umum N-Queens C++
+bool isSafe(int board[N][N], int row, int col);
+bool solveNQueens(int board[N][N], int row) {
+    if (row >= N) return true;
+    for (int col = 0; col < N; col++) {
+        if (isSafe(board, row, col)) {
+            board[row][col] = 1; // Tempatkan ratu
+            if (solveNQueens(board, row + 1))
+                return true;
+            board[row][col] = 0; // Backtrack
+        }
+    }
+    return false; // Tidak ada solusi
+}
+
+---
+
+
+*Kompleksitas:*
+- Waktu: O(N!) → eksponensial.
+- Ruang: O(N²) → untuk representasi papan.
+
+---
+
+# Kesimpulan
+N-Queens Problem adalah:
+1. Masalah CSP klasik → belajar backtracking & optimasi.
+2. Platform ideal untuk melatih algoritma rekursif.
+3. Punya aplikasi dunia nyata:
+    - Penjadwalan
+    - Penempatan modul
+    - Pengaturan sumber daya.
+4. Backtracking → teknik kunci → membangun solusi + mundur saat perlu.
